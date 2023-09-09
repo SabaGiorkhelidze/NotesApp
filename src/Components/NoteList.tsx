@@ -1,26 +1,18 @@
 import { Col, Form, Row, Stack, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-// import { v4 as uuidV4 } from "uuid";
 import ReactSelect from "react-select";
 import { useState, useMemo } from "react";
-import { Tag } from "../App";
 import NoteCard from "./NoteCard";
 import EditTagsModal from "./EditTagsModal";
+import { Tag } from "../Types/AppTypes";
+import { SimplifiedNotes, NoteListProp } from "../Types/NoteListTypes";
 
-export type SimplifiedNotes = {
-  tags: Tag[];
-  title: string;
-  id: string;
-};
-
-type NoteListProp = {
-  availableTags: Tag[];
-  notes: SimplifiedNotes[];
-  onDeleteTag: (id: string) => void;
-  onUpdateTag: (id: string, label: string) => void;
-};
-
-function NoteList({ availableTags, notes, onDeleteTag, onUpdateTag }: NoteListProp) {
+function NoteList({
+  availableTags,
+  notes,
+  onDeleteTag,
+  onUpdateTag,
+}: NoteListProp) {
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
   const [title, setTitle] = useState("");
   const [editTagsModalIsOpen, setEditTagsModalIsOpen] = useState(false);

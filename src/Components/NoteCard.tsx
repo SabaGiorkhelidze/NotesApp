@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { SimplifiedNotes } from "./NoteList";
-import { Col, Form, Row, Stack, Button, Card, Badge } from "react-bootstrap";
+import { Stack, Card, Badge } from "react-bootstrap";
 import styles from "./NoteList.module.css";
-
+import { SimplifiedNotes } from "../Types/NoteListTypes";
 function NoteCard({ id, title, tags }: SimplifiedNotes) {
   return (
     <Card

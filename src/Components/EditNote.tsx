@@ -1,11 +1,7 @@
 import NoteForm from "./NoteForm";
-import { NoteData, Tag } from "../App";
 import { UseNote } from "../Hooks/UseNote";
-type EditNoteProps = {
-  onSubmit: (id: string, data: NoteData) => void;
-  onAddTag: (tag: Tag) => void;
-  availableTags: Tag[];
-};
+import { EditNoteProps } from "../Types/EditNoteTypes";
+
 const EditNote = ({ onSubmit, onAddTag, availableTags }: EditNoteProps) => {
   const note = UseNote();
   return (

@@ -1,14 +1,6 @@
 import { Modal, Form, Stack, Row, Col, Button } from "react-bootstrap";
-import { Tag } from "../App";
+import { EditTagsModalProps } from "../Types/EditTagsModalTypes";
 
-type EditTagsModalProps = {
-  show: boolean;
-  availableTags: Tag[];
-  handleClose: () => void;
-  onDeleteTag: (id: string) => void
-  onUpdateTag: (id: string, label: string) => void
-
-};
 
 const EditTagsModal = ({
   availableTags,
